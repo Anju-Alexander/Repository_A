@@ -10,13 +10,20 @@ pipeline {
             }
             
         }
+        stage('Update to Latest Version')
+        {
+            steps{
+                sh 'mvn versions:use-next-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
+                echo 'updated pom.xml to new version'
+            }
+        }
        
         stage('Build') {
             steps {
                
                     echo 'Build'
                     sh 'mvn clean install'
-                    echo 'Build compatible'
+                    echo 'Build stable'
                 
             }
         }
