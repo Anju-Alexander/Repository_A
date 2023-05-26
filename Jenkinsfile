@@ -10,22 +10,23 @@ pipeline {
             }
             
         }
-        stage('Update to Latest Version')
+        stage('Update, Build & Push)
         {
             steps{
                 sh 'mvn versions:use-next-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
                 echo 'updated pom.xml to new version'
+                echo 'Build'
+                sh 'mvn clean install'
+                echo 'Build stable'
+                sh 'git checkout -b "new"'
+                sh 'git remote add repo_a_push https://github.com/Anju-Alexander/Repository_A.git'
+                sh 'git add pom.xml'
+                sh 'git commit -m "updated Repo A version"'
+                sh 'git push -u repo_a_push new'
+                sh 'git remote rm repo_a_push'
             }
         }
        
-        stage('Build') {
-            steps {
-               
-                    echo 'Build'
-                    sh 'mvn clean install'
-                    echo 'Build stable'
-                
-            }
-        }
+        
     }
 }
