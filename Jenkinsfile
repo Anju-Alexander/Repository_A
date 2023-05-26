@@ -18,7 +18,7 @@ pipeline {
                 echo 'Build'
                 sh 'mvn clean install'
                 echo 'Build stable'
-                sh 'git checkout -b "new"'
+                sh 'git checkout -b "latest"'
                 sh 'git remote add repo_a_push https://github.com/Anju-Alexander/Repository_A.git'
                 sh 'git add pom.xml'
                 sh 'git commit -m "updated Repo A version"'
