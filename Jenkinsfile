@@ -13,7 +13,7 @@ pipeline {
         stage('Update, Build & Push')
         {
             steps{
-                sh 'mvn versions:use-next-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
+                sh 'mvn versions:use-latest-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
                 echo 'updated pom.xml to new version'
                 echo 'Build'
                 sh 'mvn clean install'
