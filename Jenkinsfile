@@ -22,7 +22,7 @@ pipeline {
                 sh 'git remote add repo_a_push https://github.com/Anju-Alexander/Repository_A.git'
                 sh 'git add pom.xml'
                 sh 'git commit -m "updated Repo A version"'
-                sh 'git push -u repo_a_push new'
+                sh 'git push -u repo_a_push latest-\"${BUILD_NUMBER}\"'
                 sh 'git remote rm repo_a_push'
             }
         }
