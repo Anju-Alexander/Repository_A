@@ -10,7 +10,7 @@ pipeline {
             }
             
         }
-        stage('Update, Build & Push)
+        stage('Update, Build & Push')
         {
             steps{
                 sh 'mvn versions:use-next-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
