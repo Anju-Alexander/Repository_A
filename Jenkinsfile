@@ -18,12 +18,14 @@ pipeline {
                 echo 'Build'
                 sh 'mvn clean install'
                 echo 'Build stable'
+                sh 'git checkout main'
+                sh 'git branch -D $(git branch | grep latest)'
                 sh 'git checkout -b latest-\"${BUILD_NUMBER}\"'
                 sh 'git remote add repo_a_push https://github.com/Anju-Alexander/Repository_A.git'
                 sh 'git add pom.xml'
                 sh 'git commit -m "updated Repo A version"'
                 sh 'git push -u repo_a_push latest-\"${BUILD_NUMBER}\"'
-                echo 'Running ${env.BUILD_ID}'
+                
                 sh 'git remote rm repo_a_push'
             }
         }
