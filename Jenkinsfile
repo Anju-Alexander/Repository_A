@@ -1,4 +1,4 @@
-def upstream_project = "${currentBuild.getBuildCauses()}"
+def upstream_project = "${currentBuild.getBuildCauses()[0].upstreamProject}"
 pipeline {
     agent any
 
