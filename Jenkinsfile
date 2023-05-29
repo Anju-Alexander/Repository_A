@@ -14,7 +14,8 @@ pipeline {
         {
             steps{
                 
-                echo "JOB TYPE: ${JOB_NAME}"
+                def upstream_project = "${currentBuild.getBuildCauses()[0].upstreamProject}"
+                echo "Build Caused by ${upstream_project}"
                 sh 'mvn versions:use-latest-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
                 echo 'updated pom.xml to new version'
                 echo 'Build'
