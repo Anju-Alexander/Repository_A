@@ -14,7 +14,7 @@ pipeline {
         {
             steps{
                 
-                echo "Build caused by ${env.CAUSE}"
+                echo "${BUILD_URL}/consoleText"
                 sh 'mvn versions:use-latest-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
                 echo 'updated pom.xml to new version'
                 echo 'Build'
