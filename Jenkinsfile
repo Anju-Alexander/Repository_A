@@ -23,7 +23,8 @@ pipeline {
                 sh 'git add pom.xml'
                 sh 'git commit -m "updated Repo A version"'
                 sh 'git push -u repo_a_push latest-\"${BUILD_NUMBER}\"'
-                sh 'git branch -d latest-\"${{BUILD_NUMBER}-1}\"'
+                echo 'branch latest-\"${{BUILD_NUMBER}-1}\"'
+                
                 sh 'git remote rm repo_a_push'
             }
         }
