@@ -13,7 +13,8 @@ pipeline {
         stage('Update, Build & Push')
         {
             steps{
-                echo "${currentBuild.getBuildCauses()}"
+                
+                echo "Build caused by ${env.CAUSE}"
                 sh 'mvn versions:use-latest-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
                 echo 'updated pom.xml to new version'
                 echo 'Build'
