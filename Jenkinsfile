@@ -1,3 +1,4 @@
+def upstream_project = "${currentBuild.getBuildCauses()}"
 pipeline {
     agent any
 
@@ -14,7 +15,7 @@ pipeline {
         {
             steps{
                 
-                def upstream_project = "${currentBuild.getBuildCauses()}"
+                
                 echo "Build Caused by ${upstream_project}"
                 sh 'mvn versions:use-latest-versions -Dincludes=org.beginsecure.domain.primitives:CustomJar'
                 echo 'updated pom.xml to new version'
