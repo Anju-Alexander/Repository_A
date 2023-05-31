@@ -42,11 +42,12 @@ pipeline {
                
                
             }
-           post {
-            success {
-              mail to: anjusara102@gmail.com, subject: ‘The Pipeline success :(‘
+           stage(‘ItNotWork’) {
+              steps {
+                echo “is not pass here”
+                echo “You can’t do post build in other stage”
+              }
             }
-          }
         }
        
         
