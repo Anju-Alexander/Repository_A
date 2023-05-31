@@ -16,11 +16,11 @@ pipeline {
                 
                     script {
                         def expn="${currentBuild.getBuildCauses()[0].upstreamProject}"
-                        if(expn == 'null'){
-                            echo "it was a manual trigger"
+                        if(expn != 'null'){
+                            echo "it was upstream"
                         }
                         else {
-                            echo "it was upstream"
+                            echo "it was a manual trigger"
                         }   
                         
                     }   
