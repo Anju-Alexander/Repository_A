@@ -15,8 +15,8 @@ pipeline {
             steps{
                 
                
-                
-                echo "Build Caused by ${currentBuild.getBuildCauses()[0].upstreamProject}"
+                def expn="${currentBuild.getBuildCauses()[0].upstreamProject}"
+                echo "Build Caused by ${expn}"
                
                
             }
