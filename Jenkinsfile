@@ -16,11 +16,12 @@ pipeline {
                 
                     script {
                         def expn="${currentBuild.getBuildCauses()[0].upstreamProject}"
+                        echo "Build Caused by ${expn}"
                         
                     }   
                
                 
-                echo "Build Caused by ${expn}"
+                
                
                
             }
