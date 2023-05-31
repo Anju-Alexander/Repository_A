@@ -44,6 +44,11 @@ pipeline {
         }
     post {
         always {
-          echo "I will always execute this!"        }   
+          echo "I will always execute this!"      
+          slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                            
+
+        
+        }   
       }
 }
