@@ -15,9 +15,8 @@ pipeline {
             steps{
                 
                
-                def upstream_project = "${currentBuild.getBuildCauses()[0].upstreamProject}"
-                echo "Build Caused by ${upstream_project}"
-                echo "Build Caused by ${currentBuild.getBuildCauses()[0].userId}"
+                
+                echo "Build Caused by ${currentBuild.getBuildCauses()[0].upstreamProject}"
                
                
             }
