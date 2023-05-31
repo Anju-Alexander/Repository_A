@@ -1,5 +1,3 @@
-def env = build.environment
-def cause = env.BUILD_CAUSE_UPSTREAMTRIGGER
 pipeline {
     agent any
 
@@ -17,7 +15,8 @@ pipeline {
             steps{
                 
                
-                echo cause
+                def upstream_project = "${currentBuild.getBuildCauses()[0].upstreamProject}"
+                echo "Build Caused by ${upstream_project}"
                 echo "Build Caused by ${currentBuild.getBuildCauses()[0].userId}"
                
                
