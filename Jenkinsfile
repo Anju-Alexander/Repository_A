@@ -42,11 +42,11 @@ pipeline {
                
                
             }
-            post { 
-                always { 
-                    echo 'I will always say Hello again!'
-                }
+           post {
+            success {
+              mail to: anjusara102@gmail.com, subject: ‘The Pipeline success :(‘
             }
+          }
         }
        
         
