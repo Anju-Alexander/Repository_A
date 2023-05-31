@@ -15,7 +15,7 @@ pipeline {
             steps{
                 
                 
-                echo "Build Caused by ${currentBuild.getBuildCauses()}"
+                echo "Build Caused by ${currentBuild}"
                
                
             }
