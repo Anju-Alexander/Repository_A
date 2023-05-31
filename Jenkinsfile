@@ -43,8 +43,8 @@ pipeline {
 
         }
     post {
-        always {
-          echo "I will always execute this!"
+        success {
+          mail to: anjusara102@gmail.com, subject: "The Pipeline is success :("
         }
       }
 }
