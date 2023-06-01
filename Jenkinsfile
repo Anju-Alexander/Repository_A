@@ -46,8 +46,7 @@ pipeline {
     post {
         always {
           echo "I will always execute this!"      
-          slackSend channel: 'repo-a-notifications', message: 'Hello, Build Successful!!', tokenCredentialId: 'b4c53875-29c5-4f3a-a5dc-5a97790ff44e'
-                            
+                                      
 
         
         }   
