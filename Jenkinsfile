@@ -9,8 +9,7 @@ pipeline {
                     echo "the  path is"
                     sh 'pwd'
                     script {
-                       def data = readFile(file: 'Flag')
-                       println(data)
+                       
                    }
 
                 }
@@ -42,6 +41,12 @@ pipeline {
                             }
                             else {
                                 echo "it was a manual trigger"
+                                def data = readFile(file: 'Flag')
+                                if(data == "1")
+                                {
+                                    echo "Updates to CustomJar dependencies are available!!"
+                                }
+                             
                             }   
 
                         }   
