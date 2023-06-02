@@ -40,7 +40,7 @@ pipeline {
                             else {
                                 echo "it was a manual trigger"
                                 def data = readFile(file: 'Flag')
-                                println(data)
+                                println(typeof(data))
                                 if(data == 1)
                                 {
                                     echo "Updates to CustomJar dependencies are available!!"
