@@ -31,7 +31,7 @@ pipeline {
                                 writeFile(file: 'Flag', text: "1")
                                 sh 'git add Flag'
                                 sh 'git commit -m "updated Repo A Flag to 1"'
-                                sh 'git push -u repo_a_push main
+                                sh 'git push -u repo_a_push main'
                                 
                                 echo 'updating new branch Flag to 0'
                                 sh 'git checkout -b latest-\"${BUILD_NUMBER}\"'
