@@ -9,7 +9,7 @@ pipeline {
                     echo "the  path is"
                     sh 'pwd'
                     script {
-                       def data = readFile(file: 'Flag.txt')
+                       def data = readFile(file: 'Flag')
                        println(data)
                    }
 
