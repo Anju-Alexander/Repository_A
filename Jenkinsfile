@@ -8,10 +8,10 @@ pipeline {
                     git branch: 'main', credentialsId: 'cf3d6d86-2ff7-465a-8767-58e572a16539', url: 'https://github.com/Anju-Alexander/Repository_A.git'
                     echo "the  path is"
                     sh 'pwd'
-                    File file1 = new File("Flag.txt");
-                    def String yourData = file1.readLines();
-                    echo "the flag is"
-                    echo yourData
+                    script {
+                       def data = readFile(file: 'Flag.txt')
+                       println(data)
+                   }
 
                 }
 
