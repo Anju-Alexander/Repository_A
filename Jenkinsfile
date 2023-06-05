@@ -26,12 +26,13 @@ pipeline {
                                 echo 'Build stable'
 
                                 sh 'git remote add repo_a_push https://github.com/Anju-Alexander/Repository_A.git'
-                                sh 'git checkout main'
-                                echo 'updating main branch Flag to 1'
-                                writeFile(file: 'Flag', text: "1")
+                                sh 'git checkout -b latest-\"${BUILD_NUMBER}\"'
+                                writeFile(file: 'Flag', text: "0")
+                                sh 'git add pom.xml'
                                 sh 'git add Flag'
-                                sh 'git commit -m "updated Repo A Flag to 1"'
-                                sh 'git push -u repo_a_push main'
+                                sh 'git commit -m "updated Repo A version"'
+                                sh 'git push -u repo_a_push latest-\"${BUILD_NUMBER}\"'
+                                sh 'git remote rm repo_a_push'
 
                                
                             }
