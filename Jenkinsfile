@@ -18,14 +18,19 @@ pipeline {
                 commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
                 commitMsg = commit.substring( commit.indexOf(' ') ).trim()
                 boolean flag=commitMsg.contains('Anju')
-                if(def)
-                {
-                    currentBuild.result = 'ABORTED'
-                    error('Aborting the build')
+                script{
                     
-                    
-                    return
+                     if(def)
+                    {
+                        currentBuild.result = 'ABORTED'
+                        error('Aborting the build')
+
+
+                        return
+                    }
+                
                 }
+               
             }
             
           
