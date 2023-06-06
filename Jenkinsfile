@@ -15,16 +15,11 @@ pipeline {
          
             stage('Check')
             {
-                commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
-                commitMsg = commit.substring( commit.indexOf(' ') ).trim()
-                def flag=commitMsg.contains('Anju')
                
-                 if(flag==true)
-                {
                     currentBuild.result = 'ABORTED'
                     error('Aborting the build')
                     return
-                }
+                
                 
                 
                
