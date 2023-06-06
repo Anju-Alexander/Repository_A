@@ -42,9 +42,8 @@ pipeline {
                                 def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStatus:true, returnStdout:true)
                                 println(dir1)
                                 
-                                def data = readFile(file: 'Flag')
-                                println(data.charAt(0))
-                                if(data.charAt(0) == '1')
+                                
+                                if(dir1 == 0)
                                 {
                                     echo "Updates to CustomJar dependencies are available!!"
                                 }
