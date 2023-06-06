@@ -50,6 +50,7 @@ pipeline {
                              
                             }   
                             commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
+                            
                             commitMsg = commit.substring( commit.indexOf(' ') ).trim()
                             println(commitMsg)
 
