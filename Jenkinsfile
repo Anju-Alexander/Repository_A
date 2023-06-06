@@ -39,7 +39,7 @@ pipeline {
                             }
                             else {
                                 echo "it was a manual trigger"
-                                def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStdout:false).trim()
+                                def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStatus:true, returnStdout:true).trim()
                                 
                                 
                                 def data = readFile(file: 'Flag')
