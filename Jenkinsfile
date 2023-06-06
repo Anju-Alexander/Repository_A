@@ -19,7 +19,7 @@ pipeline {
                 commitMsg = commit.substring( commit.indexOf(' ') ).trim()
                 def flag=commitMsg.contains('Anju')
                
-                 if(def==true)
+                 if(flag==true)
                 {
                     currentBuild.result = 'ABORTED'
                     error('Aborting the build')
