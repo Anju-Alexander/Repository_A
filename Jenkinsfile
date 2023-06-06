@@ -22,6 +22,7 @@ pipeline {
                 {
                     error('Aborting the build')
                     currentBuild.result = 'ABORTED'
+                    
                     return
                 }
             }
