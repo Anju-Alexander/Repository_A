@@ -53,7 +53,7 @@ pipeline {
                             
                             commitMsg = commit.substring( commit.indexOf(' ') ).trim()
                             
-                            println(commitMsg.contains("Anju"))
+                            println(commitMsg.contains('Anju'))
 
                         }   
 
