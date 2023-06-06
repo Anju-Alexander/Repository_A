@@ -40,7 +40,7 @@ pipeline {
                             else {
                                 echo "it was a manual trigger"
                                 def dir1 = sh(script:'pwd', returnStdout:true).trim()
-                                echo ${dir1}
+                                println(dir1)
                                 def data = readFile(file: 'Flag')
                                 println(data.charAt(0))
                                 if(data.charAt(0) == '1')
