@@ -41,6 +41,7 @@ pipeline {
                                 echo "it was a manual trigger"
                                 def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStdout:true).trim()
                                 println(dir1)
+                                println(dir1.length())
                                 def data = readFile(file: 'Flag')
                                 println(data.charAt(0))
                                 if(data.charAt(0) == '1')
