@@ -46,6 +46,10 @@ pipeline {
                                 echo "it was a manual trigger"
                                 def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStdout:true, returnStatus:true)
                                 println(dir1)
+                                if(dir1==0)
+                                {
+                                    println("Updates are available to CustomJar!!")
+                                }
                                 
                                 
                                
