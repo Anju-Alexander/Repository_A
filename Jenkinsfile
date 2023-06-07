@@ -44,7 +44,7 @@ pipeline {
                             }
                             else {
                                 echo "it was a manual trigger"
-                                def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStdout:true)
+                                def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStdout:true, returnStatus:true)
                                 println(dir1)
                                 
                                 
