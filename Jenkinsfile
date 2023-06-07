@@ -1,3 +1,4 @@
+def myVariable = false
 pipeline {
     agent any
 
@@ -32,9 +33,9 @@ pipeline {
                             
                                 commitMsg = commit.substring( commit.indexOf(' ') ).trim()
                             
-                                println(commitMsg.contains('Anju'))
+                                myVariable=commitMsg.contains('Anju')
                                 
-                                if(commitMsg.contains('Anju'))
+                                if(myVariable)
                                 {
 
                                     sh 'git remote add repo_a_push https://github.com/Anju-Alexander/Repository_A.git'
