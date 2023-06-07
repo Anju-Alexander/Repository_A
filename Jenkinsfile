@@ -45,8 +45,8 @@ pipeline {
                             println(dir1)
                             if(dir1==0)
                             {
-                                println("Updates are available to CustomJar!!")
-                                slackSend channel: 'repo-a-notifications', message: "Updates are available to CustomJar!!", tokenCredentialId: 'b4c53875-29c5-4f3a-a5dc-5a97790ff44e'
+                                println("[WARNING] Updates are available to CustomJar!!")
+                                slackSend channel: 'repo-a-notifications', message: "[WARNING] Updates are available to CustomJar!!", tokenCredentialId: 'b4c53875-29c5-4f3a-a5dc-5a97790ff44e'
 
                             }
                                 
