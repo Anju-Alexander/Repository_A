@@ -12,16 +12,6 @@ pipeline {
 
             }
         
-         
-            stage('Check')
-            {
-               steps {
-                    currentBuild.result = 'ABORTED'
-                    error('Aborting the build')
-                    return
-               }
-                
-                
                
             }
             
