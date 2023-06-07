@@ -60,7 +60,6 @@ pipeline {
                                     println("Updates are available to CustomJar!!")
                                 }
                                 
-                                
                                
                              
                             }   
