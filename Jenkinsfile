@@ -44,14 +44,11 @@ pipeline {
                             }
                             else {
                                 echo "it was a manual trigger"
-                                def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStatus:true, returnStdout:true)
+                                def dir1 = sh(script:'mvn versions:display-dependency-updates | grep "CustomJar"', returnStdout:true)
                                 println(dir1)
                                 
                                 
-                                if(dir1 == 0)
-                                {
-                                    echo "Updates to CustomJar dependencies are available!!"
-                                }
+                               
                              
                             }   
                             commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
